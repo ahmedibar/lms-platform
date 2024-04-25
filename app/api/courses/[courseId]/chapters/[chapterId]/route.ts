@@ -123,7 +123,8 @@ export const PATCH = async (
       });
 
       if (existingMuxData) {
-        await mux.video.assets.delete(existingMuxData.assetId);
+        // We need to comment out this line every 24 hours so that we can upload new files
+        // await mux.video.assets.delete(existingMuxData.assetId);
         await db.muxData.delete({
           where: {
             id: existingMuxData.id,
